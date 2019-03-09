@@ -18,6 +18,7 @@ public class ServletPing extends HttpServlet {
 
 
         if(semaphore.availablePermits()==0){
+            System.out.println("429 Too Many Requests");
             response.getOutputStream().println("429 Too Many Requests");
             response.getOutputStream().flush();
             response.getOutputStream().close();
@@ -30,7 +31,6 @@ public class ServletPing extends HttpServlet {
                 MyServer.newRequest++;
                 response.setCharacterEncoding("UTF-8");
                 response.getWriter().println("Cats Service. Version 0.1");
-                Thread.sleep(20000);
                 MyServer.newRequest--;
                 semaphore.release();
             } catch (InterruptedException e) {
