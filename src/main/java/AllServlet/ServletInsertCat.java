@@ -22,10 +22,6 @@ public class ServletInsertCat extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-
-        System.out.println(req.getParameter("-d"));
-
-
         if(semaphore.availablePermits()==0) {
             resp.getOutputStream().println("429 Too Many Requests");
             resp.getOutputStream().flush();
