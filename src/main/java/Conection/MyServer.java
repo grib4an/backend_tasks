@@ -7,7 +7,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 public class MyServer extends Thread {
 
     public static short newRequest=0;
-    public static int maxSize=2;
+    public static int maxSize=600;
 
     public MyServer(){}
 
