@@ -30,9 +30,8 @@ public class Cat {
     }
 
     public void setName(String name) {
-        if(!name.equals(" "))
-            this.name = name;
-        else System.out.println("Alarm name");
+        this.name = name;
+
     }
 
     public String getColor() {
@@ -51,9 +50,7 @@ public class Cat {
     }
 
     public void setTail_length(int tail_length) {
-        if(tail_length>0)
-            this.tail_length = tail_length;
-        else System.out.println("Alarm tail length");
+        this.tail_length = tail_length;
     }
 
     public int getWhiskers_length() {
@@ -61,9 +58,7 @@ public class Cat {
     }
 
     public void setWhiskers_length(int whiskers_length) {
-            if(whiskers_length>0)
-                this.whiskers_length = whiskers_length;
-            else System.out.println("Alarm whiskers length");
+            this.whiskers_length = whiskers_length;
     }
 
     public static void freeResourse(){cats.removeAll(cats);}
@@ -86,6 +81,6 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "('"+name+"','"+getColor()+"',"+tail_length+","+whiskers_length+")";
+        return "('"+name+"','"+color+"',"+tail_length+","+whiskers_length+")";
     }
 }

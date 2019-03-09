@@ -16,8 +16,7 @@ import java.util.Set;
 import java.util.concurrent.Semaphore;
 
 public class ServletInsertCat extends HttpServlet {
-    private static Gson json= new GsonBuilder().create();
-    public static HttpServletResponse exeptionResponse;
+    private static Gson json= new GsonBuilder().setPrettyPrinting().create();
     public Semaphore semaphore=Main.semaphoreRequset;
 
     @Override
@@ -27,7 +26,6 @@ public class ServletInsertCat extends HttpServlet {
         System.out.println(req.getParameter("-d"));
 
 
-/*
         if(semaphore.availablePermits()==0) {
             resp.getOutputStream().println("429 Too Many Requests");
             resp.getOutputStream().flush();
@@ -39,11 +37,8 @@ public class ServletInsertCat extends HttpServlet {
                 System.out.println("запрос обрабатывается");
                 MyServer.newRequest++;
 
-
-                resp.setContentType("application/json");
                 resp.setCharacterEncoding("UTF-8");
 
-                exeptionResponse = resp;
                 Set<String> set = req.getParameterMap().keySet();
                 String j = set.iterator().next();
 
@@ -71,6 +66,6 @@ public class ServletInsertCat extends HttpServlet {
             }
 
         }
-    */
+
     }
 }

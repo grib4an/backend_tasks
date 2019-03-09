@@ -14,7 +14,7 @@ public class Controller {
 
 
     private static DBConection dbConection=new DBConection();
-    private static Gson json= new GsonBuilder().create();
+    private static Gson json= new GsonBuilder().disableHtmlEscaping().create();
     private static ArrayList<String> answer=new ArrayList<String>();
 
     private Controller(){}
