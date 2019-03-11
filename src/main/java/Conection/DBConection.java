@@ -8,8 +8,8 @@ public class DBConection {
 
 
     private static final String URL="jdbc:postgresql://localhost:5432/wg_forge_db";
-    private static final String NAME="postgres";
-    private static final String PASSWORD="gamere27";
+    private static final String NAME="wg_forge";
+    private static final String PASSWORD="a42";
 
     private Connection connection;
 
